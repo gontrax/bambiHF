@@ -1,0 +1,44 @@
+status:
+	kosár helyzete
+	banán helyzete
+	elkapott banánok száma
+	lehullott bannánok száma
+
+init(){
+	init Timer
+	init LCD
+	init inputs;
+	init egyebek
+}
+
+loop(){			// while true
+
+	while(!start){
+		serial listen(
+			+ 	-> 	inc. speed
+			- 	-> 	dec. speed
+			start 	-> 	start = 1
+			stop	-> 	start = 0
+		);	
+	}
+
+
+	while(start){
+		check inputs
+
+		calculate status
+		
+		draw to LCD
+	}
+}
+
+
+
+
+INPUT:
+
+soros port, +, -, j, b, start, stop
+
+OUTPUT:
+
+LCD kijelző
